@@ -1,0 +1,2 @@
+startOfArray++;
+    endOfArray--;

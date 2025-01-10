@@ -1,10 +1,17 @@
-const factorial = function (number) {
-  if (number < 0) {
-    return "Input a positive number";
+const palindromes = function (input) {
+  let array = input.replace(/[^\w]/g, "").toLowerCase().split("");
+  let startOfArray = 0;
+  let endOfArray = array.length - 1;
+  while (startOfArray < endOfArray) {
+    if (array[startOfArray] !== array[endOfArray]) {
+      console.log("False");
+      return false;
+    }
+    startOfArray++;
+    endOfArray--;
   }
-  let result = 1;
-  for (let i = 1; i <= number; i++) {
-    console.log((result *= i));
-  }
+  console.log("True");
+  return true;
 };
-factorial(5);
+palindromes("Racecar!");
+palindromes("Hello, World!");
